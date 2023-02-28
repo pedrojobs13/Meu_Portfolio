@@ -1,0 +1,58 @@
+.table {
+  border-collapse: collapse;
+  border: 1px solid var(--card-color);
+  margin: auto;
+  align-items: start;
+  border-radius: 2px;
+  animation-name: topdown;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  th,
+  td {
+    padding: 0.5rem 1rem;
+    text-align: initial;
+    width: 16.5rem;
+  }
+  th {
+    background: var(--primary-color);
+    padding: 1.4rem 1rem;
+    font-size: 1.1rem;
+  }
+  tr:nth-child(2) {
+    background: var(--card-color);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media only screen and (max-width: 332px) {
+  .table {
+    border: 1px solid var(--card-color);
+    width: 250px;
+    th,
+    td {
+      padding: 0;
+      text-align: initial;
+      padding: 1rem 0.71rem;
+    }
+    th {
+      background: var(--primary-color);
+      padding: 1.4rem 1rem;
+      font-size: 0.8rem;
+    }
+    tr:nth-child(2) {
+      background: var(--card-color);
+    }
+  }
+}

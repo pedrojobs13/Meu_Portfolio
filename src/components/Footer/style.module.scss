@@ -1,0 +1,13 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.2rem;
+  p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.9rem;
+    padding: 1rem 0 1rem 0;
+    width: 20rem;
+    border-top: 1px solid var(--primary-color);
+  }
+}
