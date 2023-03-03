@@ -1,35 +1,36 @@
+import { useContext } from 'react';
+import { MenuContext } from '../Menu';
 import style from './style.module.scss'
-export default function MenuMobile() {
 
+interface PropsMenu {
 
+    handleMenuClickProps: (event: React.MouseEvent<HTMLElement>) => void;
+}
 
+export default function MenuMobile({ handleMenuClickProps }: PropsMenu) {
+    const { handleVisibleMenu, navLink } = useContext(MenuContext);
+    const menu = navLink;
 
-    function handleMenuClick(event: React.MouseEvent<HTMLElement>) {
-        event.preventDefault();
-
-        const el = event.target as HTMLInputElement
-        const targetAttr = el.getAttribute('href')
-        const location = document.querySelector(`${targetAttr}`);
-
-        if (location instanceof HTMLElement) {
-            const valueoffSeat = location.offsetTop;
-            window.scroll({
-                left: 0,
-                top: valueoffSeat - 64,
-            })
-        }
-
+    function handleMenuVisible(event: React.MouseEvent<HTMLElement>) {
+        handleMenuClickProps(event);
+        handleVisibleMenu();
     }
 
     return (
         <div className={style.container}>
             <ul>
-                <li><a href='#home' onClick={handleMenuClick}> Home</a></li>
-                <li><a href='#sobre' onClick={handleMenuClick}>Sobre</a></li>
-                <li><a href='#serviços' onClick={handleMenuClick}>Serviços</a></li>
-                <li><a href='#portfolio' onClick={handleMenuClick}>Portfólio</a></li>
-                <li><a href='#contato' onClick={handleMenuClick}>Contato</a></li>
+                {menu.map((elem, index) => (
+                    <li key={index}>
+                        <a
+                            href={`#${elem.toLocaleLowerCase()}`}
+                            onClick={handleMenuVisible}
+                        >
+                            {elem}
+                        </a>
+                    </li>
+                ))}
             </ul>
         </div>
+
     )
 }

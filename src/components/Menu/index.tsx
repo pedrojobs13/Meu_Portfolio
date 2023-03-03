@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import MenuMobile from '../MenuMobile';
 import styles from './style.module.scss'
 import { useRef, useEffect } from 'react';
 import { VscMenu } from "react-icons/vsc";
-const navLink: string[] = ['Home', 'Sobre', 'Serviços', 'Portfolio', 'Contato']
+const navLink = ['Home', 'Sobre', 'Serviços', 'Portfolio', 'Contato'];
+interface MenuContextType {
+    handleVisibleMenu: () => void
+    navLink: string[]
+}
+
+export const MenuContext = createContext({} as MenuContextType)
 
 export default function Menu() {
-    const [isvisible, setIsvisible] = useState(false);
+    const [isvisible, setIsvisible] = useState<boolean>(false);
     const headerRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -32,7 +38,6 @@ export default function Menu() {
         }
     }, []);
 
-
     function handleMenuClick(event: React.MouseEvent<HTMLElement>) {
         event.preventDefault();
 
@@ -47,16 +52,19 @@ export default function Menu() {
                 top: valueoffSeat - 64,
             })
         }
-
     }
+    function handleVisibleMenu() {
+        setIsvisible(!isvisible);
+    }
+
     /*  if (typeof window !== "undefined") {
            var largura = window.innerWidth
                || document.documentElement.clientWidth
                || document.body.clientWidth;
            ;
-   
-   
-       } */
+       }
+    */
+
     return (
         <div>
             <div className={styles.menu} ref={headerRef}>
@@ -70,15 +78,18 @@ export default function Menu() {
                             <li key={index}>
                                 <a href={`#${link.toLocaleLowerCase()}`} onClick={handleMenuClick}>{link}</a>
                             </li>
-                        ))} 
+                        ))}
                     </ul>
-
-                    <button onClick={() => { setIsvisible(!isvisible) }}><VscMenu /></button>
+                    <button onClick={handleVisibleMenu}>
+                        <VscMenu />
+                    </button>
                 </div>
             </div>
-            {isvisible &&
-                <MenuMobile />
-            }
+            <MenuContext.Provider value={{ handleVisibleMenu, navLink }}>
+                {isvisible &&
+                    <MenuMobile handleMenuClickProps={handleMenuClick} />
+                }
+            </MenuContext.Provider>
         </div>
     )
 }
