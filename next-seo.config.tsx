@@ -3,7 +3,7 @@ export default {
         type: 'website',
         locale: 'pt_BR',
         url: 'https://www.pedrooliveira.live/',
-        site_name: 'Pedro Olivera',
+        site_name: 'Pedro Oliveira',
         description: 'Desenvolvedor Front-End React, focado em fornecer soluções de qualidade com interfaces intuitivas para atender às demandas dos clientes',
     }
 }
