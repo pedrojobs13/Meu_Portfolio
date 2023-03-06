@@ -1,5 +1,4 @@
 import style from './style.module.scss'
-
 import img01 from '../../assets/ignite-timer.png'
 import img02 from '../../assets/first_foto.png'
 import img03 from '../../assets/url_shot.png'
@@ -39,7 +38,7 @@ export default function Portfolio() {
             <div className={style.Container_project}>
                 <div className={style.portfolio_card}>
                     <div className={style.image}>
-                        <img src={img01.src} />
+                        <img src={img01.src} alt="02-ignite-timer" />
                     </div>
                     <div className={style.portfolio_content}>
                         <h5>{data?.name}</h5>
@@ -49,7 +48,7 @@ export default function Portfolio() {
 
                 <div className={style.portfolio_card}>
                     <div className={style.image}>
-                        <img src={img02.src} />
+                        <img src={img02.src} alt="react-comment-dashboard"/>
                     </div>
                     <div className={style.portfolio_content}>
                         <h5>react-comment-dashboard</h5>
@@ -59,7 +58,7 @@ export default function Portfolio() {
 
                 <div className={style.portfolio_card}>
                     <div className={style.image}>
-                        <img src={img03.src} />
+                        <img src={img03.src} alt="url-shortener" />
                     </div>
                     <div className={style.portfolio_content}>
                         <h5>url-shortener</h5>

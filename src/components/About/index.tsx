@@ -26,7 +26,7 @@ export default function About() {
                     about === 'ABOUT' &&
                     <div className={styles.about_content_wrapper}>
                         <div className={styles.about_img}>
-                            <img src='https://avatars.githubusercontent.com/u/101609712?s=400&u=a04c81dc4373bb692f29763cff02316f6776ab1d&v=4' />
+                            <img src='https://avatars.githubusercontent.com/u/101609712?s=400&u=a04c81dc4373bb692f29763cff02316f6776ab1d&v=4' alt='meu_avatar/foto' />
                         </div>
                         <div className={styles.about_content}>
                             <h2>Eu sou Pedro</h2>
@@ -35,9 +35,21 @@ export default function About() {
                                 <h6>Entre em contato:</h6>
                                 <div className={styles.icon_about}>
                                     <a href="https://www.linkedin.com/in/pedro-lucas-gomes-8b09621a9/
-                                    " target="_blank"><span><TiSocialLinkedin /></span></a>
-                                    <a href='https://github.com/pedrojobs13' target="_blank"></a>      <a><span><TiSocialGithub /></span></a>
-                                    <a href='mailto:pedrolucasgomesdeoliveira13@gmail.com'> <span><TiMail /></span></a>
+                                    " target="_blank" aria-label="linkedin">
+                                        <span>
+                                            <TiSocialLinkedin />
+                                        </span>
+                                    </a>
+                                    <a href='https://github.com/pedrojobs13' target="_blank" aria-label="github">
+                                        <span>
+                                            <TiSocialGithub />
+                                        </span>
+                                    </a>
+                                    <a href='mailto:pedrolucasgomesdeoliveira13@gmail.com' aria-label="email">
+                                        <span>
+                                            <TiMail />
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

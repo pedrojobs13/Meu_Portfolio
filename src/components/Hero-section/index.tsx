@@ -32,7 +32,7 @@ export default function HeroSection() {
             </div>
             <div className={style.colum}>
 
-                <img className={style.avatar} src='https://avatars.githubusercontent.com/u/101609712?s=400&u=a04c81dc4373bb692f29763cff02316f6776ab1d&v=4' />
+                <img className={style.avatar} src='https://avatars.githubusercontent.com/u/101609712?s=400&u=a04c81dc4373bb692f29763cff02316f6776ab1d&v=4' alt='meu_avatar/foto' />
 
             </div>
         </ div>

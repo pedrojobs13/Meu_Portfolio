@@ -8,5 +8,6 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
-    </>)
+    </>
+    )
 }

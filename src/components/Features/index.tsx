@@ -29,7 +29,7 @@ export default function Features() {
                             <span className={style.service_icon}>
                                 <BsHddNetworkFill />
                             </span>
-                            <h2>Frontend with Backend</h2>
+                            <h2>Front-end com Back-end</h2>
                             <p>Fullstack web application development usando Next.js, API routes, com payment integration, integração com APIs de terceiros, etc...</p>
                         </div>
                     </div>

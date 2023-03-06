@@ -68,7 +68,7 @@
     visibility: hidden;
     max-height: 0;
   }
-  &:focus-within footer{
+  &:focus-within footer {
     visibility: visible;
     max-height: none;
   }
@@ -93,13 +93,16 @@
   }
 }
 @media only screen and (max-width: 788px) {
-  .contact_info_container {
-    width: 100%;
+  .Container {
+    .contact_info_container {
+      width: 100%;
+    }
   }
 }
 
 @media only screen and (max-width: 590px) {
   .Container {
+    padding: 1rem;
     flex-direction: column;
     gap: 1rem;
   }

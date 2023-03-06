@@ -6,13 +6,12 @@
 }
 .aboutMe {
   padding: 2rem;
-  h6{
+  h6 {
     color: var(--primary-color);
     margin-bottom: 0.95rem;
     font-size: 2rem;
-}
   }
-
+}
 
 .modal_section {
   display: grid;
@@ -74,13 +73,18 @@
   .icon_about {
     font-size: 1.5rem;
     padding: 0.3rem 0;
-    span {
-      padding: 0 0.4rem;
-      
-    }
     span:hover {
       background: var(--bg-color);
       filter: brightness(1.2);
+    }
+  }
+  a {
+    svg {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      line-height: 0;
+      border-radius: 2px;
     }
   }
 }
@@ -99,8 +103,8 @@
   }
 }
 
-@media only screen and (max-width: 894px){
-  .modal_section{
+@media only screen and (max-width: 894px) {
+  .modal_section {
     display: flex;
     flex-direction: column;
     margin: 1rem;
@@ -110,8 +114,8 @@
   }
 }
 
-@media only screen and (max-width: 400px){
-  .about_content_wrapper{
+@media only screen and (max-width: 400px) {
+  .about_content_wrapper {
     flex-direction: column;
     align-items: center;
   }
