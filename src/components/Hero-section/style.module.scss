@@ -15,7 +15,7 @@
     border-radius: 3px;
     font-size: 1rem;
     transition: opacity 0.2s;
- 
+
     &:hover {
       filter: blur(0.6px);
       opacity: 0.7;
@@ -53,9 +53,10 @@
 
 .avatar {
   padding: 1rem;
-  background-color: var(--primary-color);
+  background: linear-gradient(180deg, #1ea483 0%, #7865ff 100%);
   border-radius: 10px;
-  max-width: 19rem;
+
+  object-fit: "scale-down";
 }
 
 @media only screen and (max-width: 544px) {
@@ -67,7 +68,7 @@
       width: fit-content;
       font-size: 1.3rem;
     }
-    p{
+    p {
       font-size: 0.8rem;
     }
   }
